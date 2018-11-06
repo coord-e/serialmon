@@ -37,7 +37,9 @@ void loop(void) {
     sprintf(line_buf + next_pos, "%02x", c);
     
     tft.setCursor(0, 0);
-    tft.println(); tft.println(); tft.println();
+    for (unsigned i = 0; i < current_line + 3; i++) {
+      tft.println();
+    }
     tft.print(line_buf);
     
     current_length++;
