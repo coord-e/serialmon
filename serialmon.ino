@@ -27,7 +27,7 @@ size_t current_line   = 0;
 void loop(void) {
   if (Serial.available()) {
     const auto c = Serial.read();
-    sprintf(line_buf + current_length, "%c", c);
+    sprintf(line_buf + current_length, "%c", isprint(c) ? c : '.');
     
     const auto next_pos = char_area + 1 + current_length * 3;
     for (int i = current_length + 1; i < next_pos; i++) {
