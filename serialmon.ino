@@ -34,7 +34,7 @@ void loop(void) {
     sprintf(line_buf + current_length, "%c", isprint(c) ? c : '.');
     
     const auto next_pos = char_area + 1 + current_length * 3;
-    for (int i = current_length + 1; i < next_pos; i++) {
+    for (unsigned i = current_length + 1; i < next_pos; i++) {
       line_buf[i] = ' ';
     }
     
