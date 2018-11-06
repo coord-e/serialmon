@@ -41,5 +41,10 @@ void loop(void) {
     tft.print(line_buf);
     
     current_length++;
+
+    if (current_length > char_area) {
+      current_length = 0;
+      current_line++;
+    }
   }
 }
