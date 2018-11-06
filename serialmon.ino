@@ -14,8 +14,8 @@ void setup() {
   tft.setCursor(0, 0);
   tft.setTextColor(ILI9341_WHITE);
   tft.setTextSize(1);
-  tft.println("serialmon started");
-  tft.println("-- char -- | ---- hex ---->");
+  tft.println("serialmon started\n");
+  tft.println(" -- char -- | ---- hex ---->");
 }
 
 static constexpr size_t char_area = 12;
