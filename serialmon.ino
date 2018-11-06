@@ -44,7 +44,7 @@ void loop(void) {
     
     current_length++;
 
-    if (current_length > char_area) {
+    if (current_length >= char_area) {
       current_length = 0;
       current_line++;
     }
