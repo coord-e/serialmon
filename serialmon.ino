@@ -2,10 +2,14 @@
 #include "Adafruit_GFX.h"
 #include "Adafruit_ILI9341.h"
 
-Adafruit_ILI9341 tft = Adafruit_ILI9341(10, 9);
+static constexpr auto dc_pin = 9;
+static constexpr auto cs_pin = 10;
+static constexpr auto baudrate = 115200;
+
+Adafruit_ILI9341 tft = Adafruit_ILI9341(cs_pin, dc_pin);
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(baudrate);
  
   tft.begin();
   delay(10);
