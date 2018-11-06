@@ -18,7 +18,6 @@ void setup() {
   tft.setCursor(0, 0);
   tft.setTextColor(ILI9341_WHITE);
   tft.setTextSize(1);
-  tft.println("serialmon started\n");
   tft.println(" -- char -- | ---- hex ---->");
 }
 
@@ -41,7 +40,7 @@ void loop(void) {
     sprintf(line_buf + next_pos, "%02x", c);
     
     tft.setCursor(0, 0);
-    for (unsigned i = 0; i < current_line + 3; i++) {
+    for (unsigned i = 0; i < current_line + 1; i++) {
       tft.println();
     }
     tft.print(line_buf);
