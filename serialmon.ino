@@ -5,7 +5,6 @@
 static constexpr auto dc_pin = 9;
 static constexpr auto cs_pin = 10;
 static constexpr auto baudrate = 115200;
-static constexpr auto is_colored = true;
 
 Adafruit_ILI9341 tft = Adafruit_ILI9341(cs_pin, dc_pin);
 
@@ -39,11 +38,6 @@ void loop(void) {
     }
     
     sprintf(line_buf + next_pos, "%02x", c);
-
-    if (is_colored) {
-      const auto color = map(c, 0, 0xff, 0, 0xffff);
-      tft.setTextColor(color);
-    }
     
     tft.setCursor(0, 0);
     for (unsigned i = 0; i < current_line + 1; i++) {
